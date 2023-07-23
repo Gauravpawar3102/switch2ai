@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import {
-  setEducation,
+  setEducationDetails,
   setState,
   setWorkExperience,
 } from '../../../store/headerSlice';
@@ -19,7 +19,7 @@ function Education() {
 
   const onSubmit = (data) => {
     console.log(data);
-    dispatch(setEducation(data));
+    dispatch(setEducationDetails(data));
   };
   return (
     <div className="container flex flex-col justify-center w-full bg-red-400 items-center p-4 gap-8">

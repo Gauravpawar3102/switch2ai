@@ -103,7 +103,23 @@ function BasicDetails() {
               type="text"
               className="outline-none p-2  rounded-md"
               placeholder="LinkedIn URL"
-              {...register('linkedinUrl')}
+              {...register('urls.linkedin')}
+            />
+          </div>{' '}
+          <div className="grid grid-cols-1 gap-4">
+            <input
+              type="text"
+              className="outline-none p-2  rounded-md"
+              placeholder="Github URL"
+              {...register('urls.github')}
+            />
+          </div>{' '}
+          <div className="grid grid-cols-1 gap-4">
+            <input
+              type="text"
+              className="outline-none p-2  rounded-md"
+              placeholder="portfolio URL"
+              {...register('urls.website')}
             />
           </div>
           <textarea

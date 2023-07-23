@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import {
-  setProfessionalSummary,
+  setSummary,
   setSkillDetails,
   setState,
 } from '../../../store/headerSlice';
@@ -18,7 +18,7 @@ function ProfessionalSummary() {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    dispatch(setProfessionalSummary(data));
+    dispatch(setSummary(data));
   };
 
   return (

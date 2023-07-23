@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSkillDetails, setState } from '../../../store/headerSlice';
+import { setSkills, setState } from '../../../store/headerSlice';
 
 function Skills() {
   // const skillsState = useSelector((state) => state.header.skillDetails);
@@ -30,7 +30,7 @@ function Skills() {
     data.tools = tools;
     data.frameworks = frameworks;
     console.log(data);
-    dispatch(setSkillDetails(data));
+    dispatch(setSkills(data));
   };
 
   return (

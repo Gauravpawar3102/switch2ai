@@ -69,3 +69,4 @@ const resumeDetailsSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model('ResumeDetails', resumeDetailsSchema);
+// module.exports = mongoose.model('CompanyDetails', companyDetailsSchema);

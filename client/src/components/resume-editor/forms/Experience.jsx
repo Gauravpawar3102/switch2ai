@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { setState, setWorkExperience } from '../../../store/headerSlice';
+import { setState, setCompanyDetails } from '../../../store/headerSlice';
 
 function Experience() {
   const workExperience = useSelector((state) => state.header.workExperience);
@@ -35,7 +35,7 @@ function Experience() {
 
   const onSubmit = (data) => {
     console.log(data);
-    dispatch(setWorkExperience(data));
+    dispatch(setCompanyDetails(data));
   };
 
   return (

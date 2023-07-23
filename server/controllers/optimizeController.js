@@ -51,7 +51,7 @@ const createResume = asyncHandler(async (req, res) => {
 
 const updateResume = asyncHandler(async (req, res) => {
   const updateResumeDetails = await ResumeDetails.findById(req.params.id);
-  // console.log(req.body);
+
   if (!updateResumeDetails) {
     res.status(404);
     throw new Error('resume not found');
@@ -64,8 +64,7 @@ const updateResume = asyncHandler(async (req, res) => {
       new: true,
     }
   );
-  // console.log(updatedResume);
-  // console.log(req.params, req.body);
+
   res.status(202).json(updatedResume);
 });
 
@@ -102,17 +101,14 @@ const summaryOptimizers = asyncHandler(async (req, res) => {
       req.params.id,
       { summary: `${response.data.choices[0].message.content}` }
     );
-    // res.json({
-    //   message: response.data.choices[0].message.content,
-    // });
+
     res.status(201).json(optimizedSummary);
   }
 });
 const workExperienceWriter = asyncHandler(async (req, res) => {
-  const updateworkExperienceWriter = await ResumeDetails.findById(
-    req.params.id
-  );
-  // console.log('newwwwwwwwwwww' + updateworkExperienceWriter.companyDetails);
+  const resumeId = req.params.id;
+  const updateworkExperienceWriter = await ResumeDetails.findById(resumeId);
+
   if (!updateworkExperienceWriter) {
     res.status(404);
     throw new Error('resume not found');
@@ -128,51 +124,23 @@ const workExperienceWriter = asyncHandler(async (req, res) => {
         content: `create 3 bullet points for resume  for the given job role of " ${title}"  and work experience description is  "${workSummary}  "`,
       },
     ],
-    // prompt: `${message}`,
-    // max_tokens: 7,
-    // temperature: 0,
+    //   // prompt: `${message}`,
+    //   // max_tokens: 7,
+    //   // temperature: 0,
   });
-  // console.log(response.data.choices[0].message.content);
-  // if (response.data.choices[0].message) {
-  const optimizedSummary = await ResumeDetails.findById(req.params.id).then(
-    (resumeDetails) => {
-      const company = resumeDetails.companyDetails.id(req.body.companyId);
-      company.workSummary = response.data.choices[0].message.content;
 
-      return resumeDetails.save();
+  const optimizedSummary = await ResumeDetails.updateOne(
+    { _id: resumeId, 'companyDetails._id': companyId },
+    {
+      $set: {
+        'companyDetails.$.workSummary':
+          response.data.choices[0].message.content,
+      },
     }
   );
 
-  // console.log(optimizedSummary);
-  // req.params.id,
-  // {
-  //   $set: {
-  //     'companyDetails.$.workSummary': `${response.data.choices[0].message.content}`,
-  //   },
-  // },
-  // {
-  //   ' companyDetails.$[company].workSummary': `${response.data.choices[0].message.content}`,
-  // },
-  // {
-  //   new: true,
-  //   arrayFilters: [{ 'company._id': companyId }],
-  // }
-  // {
-  //   'updateworkExperienceWriter.companyDetails.workSummary': `${response.data.choices[0].message.content}`,
-  // }
-
-  //    function (e, data) {
-  //     if (e) {
-  //       console.log(e);
-  //     }
-  //     console.log(data.);
-  //  }
-  // );
-  // res.json({
-  //   message: response.data.choices[0].message.content,
-  // });
+  console.log(optimizedSummary);
   res.status(201).json(optimizedSummary);
-  // }
 });
 
 const projectOptimizer = asyncHandler(async (req, res) => {
@@ -202,9 +170,7 @@ const projectOptimizer = asyncHandler(async (req, res) => {
       req.params.id,
       { projectSummary: `${response.data.choices[0].message.content}` }
     );
-    // res.json({
-    //   message: response.data.choices[0].message.content,
-    // });
+
     res.status(201).json(optimizedProjectSummary);
   }
 });

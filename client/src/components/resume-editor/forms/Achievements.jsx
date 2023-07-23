@@ -15,7 +15,7 @@ function Achievements() {
 
   const onSubmit = (data) => {
     console.log(data);
-    dispatch(setAchievements(data));
+    // dispatch(setAchievements(data));
   };
   return (
     <div className="container flex flex-col justify-center w-full bg-red-400 items-center p-4 gap-8">

@@ -11,6 +11,13 @@ const basicDetails = {
     url: '',
   },
 };
+const userDetails = {
+  fullName: '',
+  email: '',
+  subscriptionPlan: '',
+  phone: null,
+  isLoggedIn: false,
+};
 const totalWorkExperience = null;
 const summary = '';
 const skills = [];
@@ -57,6 +64,7 @@ export const headerSlice = createSlice({
   name: 'header',
   initialState: {
     headerState: 1,
+    userDetails,
     basicDetails,
     totalWorkExperience,
     summary,
@@ -78,6 +86,9 @@ export const headerSlice = createSlice({
       console.log(action);
       console.log(state);
       state.basicDetails = action.payload;
+    },
+    setUserDetails: (state, action) => {
+      state.userDetails = action.payload;
     },
     setTotalWorkExperience: (state, action) => {
       // console.log(action);

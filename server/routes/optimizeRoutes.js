@@ -1,3 +1,4 @@
+
 const express = require('express');
 const router = express.Router();
 const {
@@ -19,3 +20,4 @@ router.route('/getresume/:id').get(getResume);
 // router.route('/career').post(careerOptimizers);
 
 module.exports = router;
+
