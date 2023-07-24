@@ -29,3 +29,12 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #a0aec0;
 }
+
+@layer components {
+  .btn-primary-large {
+    @apply px-4 py-2 tracking-wider bg-[#FF8956] text-black font-semibold shadow-sm hover:bg-[#ff7a41] focus:outline-none focus:ring-2 focus:ring-[#FF8956] focus:ring-opacity-75;
+  }
+  .btn-secondary-large-no-color {
+    @apply px-4 py-2 tracking-wider bg-[#FF8956] text-black font-semibold shadow-sm hover:bg-[#ff7a41] focus:outline-none focus:ring-2 focus:ring-[#FF8956] focus:ring-opacity-75;
+  }
+}
