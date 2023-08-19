@@ -2,7 +2,7 @@ import React from 'react';
 import switchLogo from '../assets/switch-logo.svg';
 function LandingPageNavbar() {
   return (
-    <div className='navbar-container flex justify-between h-16  items-center w-4/5 p-2 '>
+    <div className='navbar-container flex justify-between h-16  items-center w-4/5 p-2  '>
       <div className='left-container '>
         <div className='logo-container flex items-center'>
           <div className='logo'>

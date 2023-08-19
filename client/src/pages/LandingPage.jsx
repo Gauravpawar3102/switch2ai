@@ -26,12 +26,12 @@ function LandingPage() {
             </div>
           </div>
         </div>
-        <div className='right-container w-2/5'>
+        <div className='right-container w-2/5 bg-gray-50 '>
           <div className='box-container w-full '>
-            <div className='heading-container bg-[#5F82FD] text-white text-xl py-2 text-center mb-4 '>
+            <div className='heading-container bg-[#5F82FD] text-white text-xl py-2 text-center '>
               Create Job Description-Based Resume
             </div>
-            <div className='input-container flex gap-4 flex-col'>
+            <div className='input-container flex gap-4 flex-col p-4'>
               <div className='email-input-container'>
                 <label
                   for='default-input'
@@ -42,7 +42,8 @@ function LandingPage() {
                 <input
                   type='text'
                   id='default-input'
-                  className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                  placeholder='enter you email...'
+                  className='bg-white border border-gray-300 outline-[#5F82FD] text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                 />{' '}
               </div>
               <div className='description-input-container'>
@@ -56,19 +57,19 @@ function LandingPage() {
                   type='message'
                   id='large-input'
                   rows='5'
-                  className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                  className='block p-2.5 w-full text-sm outline-[#5F82FD] text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                   placeholder='paste yor job description here...'
                 />
               </div>
-              <div className='buttons-contianer flex justify-between mb-5'>
-                <button className='uploadresume px-4 py-2 bg-[#5F82FD]   w-1/2 tracking-wider text-white'>
+              <div className='buttons-contianer flex justify-between mb-5 gap-2'>
+                <button className='uploadresume px-4 py-2 bg-[#5F82FD] hover:bg-[#5f79da]  w-1/2 tracking-wider text-white'>
                   upload resume
                 </button>
-                <button className='entermanually px-4 py-2 w-1/2 text-[#5F82FD]'>
+                <button className='entermanually px-4 py-2 w-1/2 text-[#5F82FD] tracking-wider  hover:bg-[#5F82FD] hover:text-white '>
                   enter manually
                 </button>
               </div>
-              <button className='downloadbtn uppercase tracking-wide text-black w-full py-2 border-[2px] border-[#5F82FD]'>
+              <button className='downloadbtn uppercase  hover:bg-[#FF8956] tracking-wide text-black w-full py-2 border-[2px] border-[#5F82FD] hover:border-2 hover:border-[#FF8956] hover:font-semibold'>
                 Download JOB-optimized resume
               </button>
             </div>
@@ -78,7 +79,7 @@ function LandingPage() {
     );
   };
   return (
-    <div className='landing-page-container flex flex-col items-center w-screen'>
+    <div className='landing-page-container flex flex-col items-center w-screen gap-10'>
       <LandingPageNavbar />
       <HeroSection />
     </div>
