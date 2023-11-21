@@ -8,14 +8,14 @@ import Xurdo from './components/resume/xurdo/Xurdo';
 import LandingPage from './pages/LandingPage';
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Router>
-        {/* <Navbar /> */}
+        <Navbar />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/resume-builder" element={<ResumeBuilder />} />
-          <Route path="/email-generator" element={<Email />} />
-          <Route path="/resume" element={<Xurdo />} />
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/resume-builder' element={<ResumeBuilder />} />
+          <Route path='/email-generator' element={<Email />} />
+          <Route path='/resume' element={<Xurdo />} />
         </Routes>
       </Router>
     </div>
